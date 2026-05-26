@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #040404;
+  --foreground: #f5f1ea;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background: #040404;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.scene-fullscreen .pnlm-about-msg,
+.scene-fullscreen .pnlm-load-box,
+.scene-fullscreen .pnlm-panorama-info,
+.scene-fullscreen .pnlm-hot-spot-debug-indicator,
+.scene-fullscreen .pnlm-controls,
+.scene-fullscreen .pnlm-fullscreen-toggle,
+.scene-fullscreen .pnlm-zoom-controls {
+  display: none !important;
+}
+
+.scene-fullscreen .pnlm-ui {
+  pointer-events: auto !important;
+}
+
+.scene-fullscreen {
+  touch-action: none;
+  overscroll-behavior: none;
+  pointer-events: auto;
+}
+
+.scene-fullscreen canvas {
+  color: initial !important;
+  font-size: initial !important;
+  line-height: initial !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
